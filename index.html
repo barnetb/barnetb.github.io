@@ -8,14 +8,17 @@
 
     <link href="https://unpkg.com/browse/normalize.css@8.0.1/normalize.css" rel="stylesheet" type="text/css"/>
 
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
     <style type="text/css">
         /* element selectors */
-        div {
+        /* div {
             color: black;
             padding: 20px 0px 10px;
-            /* font-family:fantasy */
+            
         }
 
         .background { 
@@ -38,7 +41,7 @@
         #title {
             font-size: 70px;
             text-align: center;
-            font-family: 'Indie Flower', cursive;
+            font-family: 'VT323', monospace;
             
         }
 
@@ -51,23 +54,355 @@
         .line1 {
             border-top: 1px solid green;
             border-radius: 1px
+        } */
+
+
+
+        /* TIMELINE */
+        * {
+            box-sizing: border-box;
         }
+
+        /* Set a background color */
+        body {
+            background-color: #474e5d;
+            font-family: Helvetica, sans-serif;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        /* Container around content */
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* The circles on the timeline */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Place the container to the left */
+        .left {
+            left: 0;
+        }
+
+        /* Place the container to the right */
+        .right {
+            left: 50%;
+        }
+
+        /* Add arrows to the left container (pointing right) */
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        /* Add arrows to the right container (pointing left) */
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+            left: -16px;
+        }
+
+        /* The actual content */
+        .content {
+            padding: 10px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+        @media screen and (max-width: 600px) {
+            /* Place the timelime to the left */
+            .timeline::after {
+                left: 31px;
+            }
+
+            /* Full-width containers */
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            /* Make sure that all arrows are pointing leftwards */
+            .container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            /* Make sure all circles are at the same spot */
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            /* Make all right containers behave like the left ones */
+            .right {
+                left: 0%;
+            }
+        }
+
+        h2 {
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.1em;
+            margin-block-end: 0.6em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        /* Make the year in left containers align directly adjacent to timeline */
+        h3 {
+            text-align: right;
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.1em;
+            margin-block-end: 0.6em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        h4 {
+            text-align: center;
+            font-size: 1.2em;
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 0.5em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+        }
+
+
+
+
+
+        body {
+            margin: 0;
+            background-color: rgb(110, 109, 109);
+        }
+
+
+
+
+
+        /* SIDENAV */
+        .title {
+            font-family: 'Permanent Marker', cursive;
+            color: whitesmoke;
+            font-size: 35px;
+            padding: 10px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0px;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .links {
+            padding-top: 30px;
+        }
+
+        .sidenav a {
+            padding: 6px 8px 6px 25px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            text-align: left;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .content-1 {
+            margin-left: 250px; 
+            padding: 0px 10px;
+            margin-right: 10px;
+        }
+
+        .sublinks {
+            /* padding-top: 30px; */
+            padding-left: 25px;
+        }
+
+        /* h1 {
+            position: absolute;
+            left: 15%;
+            top: 5%; 
+        } */
 
     </style>    
 </head>
 <body>
-
-    <!-- <div class="background">
-   
-    <img class="center" src="images/santa1.jpg" alt="santa"> -->
-
-    <h1 id="title" class="goofiness">The Life & Times of Billy</h1>
-
-    <hr class="line1">
-
-    <h2 class="goofiness">Work in progress...</h2>
-
-    
-</div>    
+    <div id="app">
+        <div class="sidenav">
+            <div class="title">The Life & Times of Billy—</div>
+            <!-- <div class="category">
+                <select v-model="input_category">
+                    <optgroup label="Pick category...">
+                        <option value="random">Random</option>
+                        <option v-for="category in categories" v-bind:value="category">{{category.name}}</option>
+                    </optgroup>
+                </select>
+                <button class="go-button" v-on:click="goButton">Go</button>
+            </div> -->
+            <div class="links">
+                <a href="https://www.linkedin.com/in/billybarnettjr/" target="blank">LinkedIn</a>
+                <a href="https://github.com/barnetb/" target="blank">GitHub</a>
+                <a href="" target="blank">Projects</a>
+                    <div class="sublinks" style="font-size:10px;">
+                        <a href="https://github.com/barnetb/motus-operandi" target="blank">motus operandi</a>
+                        <a href="https://pixelparty.herokuapp.com" target="blank">Pixel Party!</a>
+                    </div>
+                <a href="http://bit.ly/2WjosjE" target="blank">Resume</a>
+            </div>
+        </div>
+        <div class="content-1">
+            <div class="timeline">
+                <div class="container left">
+                    <div class="content">
+                        <h3>1974</h3>
+                        <h4>Birth and Infancy</h4>
+                        <img src="images/billyball2.jpg" alt="baby">
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h2>1980</h2>
+                        <h4>Kindergarten</h4>
+                        <img src="images/poohbelt.jpg" alt="kindergarten">
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="content">
+                        <h3>1981-1989</h3>
+                        <h4>Elementary School</h4>
+                        <img src="images/bigwheel.jpg" alt="big_wheel">
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h2>1989-1993</h2>
+                        <h4>High School</h4>
+                        <img src="images/opelika.jpg" alt="opelika_al">
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="content">
+                        <h3>1993-1997</h3>
+                        <h4>College</h4>
+                        <img src="images/au3.png" alt="auburn">
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h2>1998</h2>
+                        <h4>Boot Camp</h4>
+                        <img src="images/oldnavy.jpg" alt="boot_camp">
+                        <p>Lorem ipsum...</p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="content">
+                        <h2></h2>
+                        <h4></h4>
+                        <img src="">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="content">
+            <div class="film"></div>
+            <img class="image" v-bind:src="image_gato"/>
+            <div class="writing">
+                <div>Meow...</div>
+                <button class="new-kitty" v-on:click="newKittyButton">→</button>
+            </div>         
+        </div> -->
+    </div>    
 </body>
 </html>
+
+<!-- Citations:
+Fixed Sidebar (https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp).
+Timeline (https://www.w3schools.com/howto/howto_css_timeline.asp).
+
+
+-->
