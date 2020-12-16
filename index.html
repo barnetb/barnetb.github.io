@@ -234,6 +234,11 @@
             width: 90%;
         }
 
+        p {
+            font-style: italic;
+            font-weight: bold;
+        }
+
 
 
 
@@ -244,7 +249,9 @@
         }
 
 
-
+        .header {
+            text-align: center;
+        }
 
 
         /* SIDENAV */
@@ -308,15 +315,6 @@
     <div id="app">
         <div class="sidenav">
             <div class="title">The Life & Times of Billy—</div>
-            <!-- <div class="category">
-                <select v-model="input_category">
-                    <optgroup label="Pick category...">
-                        <option value="random">Random</option>
-                        <option v-for="category in categories" v-bind:value="category">{{category.name}}</option>
-                    </optgroup>
-                </select>
-                <button class="go-button" v-on:click="goButton">Go</button>
-            </div> -->
             <div class="links">
                 <a href="https://www.linkedin.com/in/billybarnettjr/" target="blank">LinkedIn</a>
                 <a href="https://github.com/barnetb/" target="blank">GitHub</a>
@@ -329,13 +327,18 @@
             </div>
         </div>
         <div class="content-1">
+            <div class="header">
+                <p>Hi, I'm Billy Barnett...an accomplished advanced coding bootcamp graduate and aspiring web developer with considerable background in several programming languages and web application construction. Specializing in Python, JavaScript and React.</p>
+                <p>Please check out my timeline below for the skills I've acquired over my life, which make me a well-rounded addition to any orgnization!</p>
+            </div>
             <div class="timeline">
                 <div class="container left">
                     <div class="content">
                         <h3>1974</h3>
                         <h4>Birth and Infancy</h4>
                         <img src="images/billyball2.jpg" alt="baby">
-                        <p>Lorem ipsum...</p>
+                        <hr>
+                        <p>Eating - Drinking - Pooping</p>
                     </div>
                 </div>
                 <div class="container right">
@@ -343,7 +346,8 @@
                         <h2>1980</h2>
                         <h4>Kindergarten</h4>
                         <img src="images/poohbelt.jpg" alt="kindergarten">
-                        <p>Lorem ipsum...</p>
+                        <hr>
+                        <p>Shoe Tying - Name Writing - Turtle Feeding</p>
                     </div>
                 </div>
                 <div class="container left">
@@ -351,7 +355,8 @@
                         <h3>1981-1989</h3>
                         <h4>Elementary School</h4>
                         <img src="images/bigwheel.jpg" alt="big_wheel">
-                        <p>Lorem ipsum...</p>
+                        <hr>
+                        <p>Readin' - Writin' - 'rithmetic - Big Wheelin'</p>
                     </div>
                 </div>
                 <div class="container right">
@@ -359,7 +364,8 @@
                         <h2>1989-1993</h2>
                         <h4>High School</h4>
                         <img src="images/opelika.jpg" alt="opelika_al">
-                        <p>Lorem ipsum...</p>
+                        <hr>
+                        <p>AP Calculus - AP Chemistry - AP Physiology - Advanced Spanish -  Football - McDonald's Cooking</p>
                     </div>
                 </div>
                 <div class="container left">
@@ -367,7 +373,7 @@
                         <h3>1993-1997</h3>
                         <h4>College</h4>
                         <img src="images/au3.png" alt="auburn">
-                        <p>Lorem ipsum...</p>
+                        <p>B.S. Biomedical Sciences - Collegiate Spanish</p>
                     </div>
                 </div>
                 <div class="container right">
@@ -375,15 +381,81 @@
                         <h2>1998</h2>
                         <h4>Boot Camp</h4>
                         <img src="images/oldnavy.jpg" alt="boot_camp">
-                        <p>Lorem ipsum...</p>
+                        <hr>
+                        <p>Honor - Courage - Commitment</p>
                     </div>
                 </div>
                 <div class="container left">
                     <div class="content">
-                        <h2></h2>
-                        <h4></h4>
-                        <img src="">
-                        <p></p>
+                        <h3>2000-2004</h3>
+                        <h4>Nuclear Power</h4>
+                        <img src="images/ssbn1.jpg" alt="sub">
+                        <hr>
+                        <p>Nuclear Reactor Operations - Electronic Systems - AC/DC Circuits - Troubleshooting - Quality Control - Data Collection</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h2>2005</h2>
+                        <h4>Baked First Cheesecake</h4>
+                        <img src="images/cheesecake.jpg" alt="cheesecake">
+                        <hr>
+                        <p>Culinary Chemistry - Waist Stretching</p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="content">
+                        <h3>2006-2013</h3>
+                        <h4>Logistics and Supply</h4>
+                        <img src="images/gridley1.jpg" alt="ddg101">
+                        <hr>
+                        <p>Supply Chain Management - Financial Management - Facilities Management - Inventory Management - Procurement - Food Service Management - Operational Logistics - Submarine Piloting - Helo Control Tower</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h2>2013-2014</h2>
+                        <h4>Naval Postgraduate School</h4>
+                        <img src="images/nps.png" alt="nps">
+                        <hr>
+                        <p>Contracting Management - Acquisitions Management - Critical Thinking - Economics - Marketing</p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="content">
+                        <h3>2015-2017</h3>
+                        <h4>Material Management</h4>
+                        <img src="images/chafee2.jpg" alt="ddg90">
+                        <hr>
+                        <p>Maintenance Data Systems - Safety - Maintenance Availabilities - Attention to Detail - Microsoft Office Suite</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h2>2018</h2>
+                        <h4>Navy Retirement</h4>
+                        <img src="images/dogs.jpg" alt="dogs">
+                        <hr>
+                        <p>Growth of 1st Beard - Loss of Sea Legs - Interview Skills</p>
+                    </div>
+                </div>
+                <div class="container left">
+                    <div class="content">
+                        <h3>2019</h3>
+                        <h4>Declared Favorite TV Show</h4>
+                        <img src="images/sanford2.jpg" alt="sanford">
+                        <hr>
+                        <p>Sanford and Son (1972-77)</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <h2>2020</h2>
+                        <h4>PDX Code Guild</h4>
+                        <img src="images/pdxcodeguild.png" alt="pdxcodeguild">
+                        <hr>
+                        <p>React - JSX - JavaScript - Python - MongoDB - Heroku - Express - Node - CSS - Socket.io - HTML - jQuery - Chart.js - Axios - Django - SQLite - Flask    
+                        </p>
                     </div>
                 </div>
             </div>
